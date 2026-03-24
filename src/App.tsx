@@ -110,9 +110,9 @@ const portfolioData: PortfolioData = {
     title: 'Full-Stack Developer',
     bio: 'Passionate full-stack developer with 2 years of hands-on experience building responsive and scalable web applications. Skilled in both front-end and back-end development. Graduating Computer Science student eager to contribute as a junior to senior-level developer in a professional team environment.',
     socialLinks: {
-      github: 'https://github.com/markjamesrafael',
+      github: 'https://github.com/Mjamesss',
       instagram: 'https://instagram.com/markjamesrafael',
-      facebook: 'https://facebook.com/markjamesrafael'
+      facebook: 'https://www.facebook.com/thekarinamontage'
     },
     resumeUrl: '/CV.pdf',
     yearsOfExperience: 2
