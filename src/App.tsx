@@ -381,9 +381,6 @@ const Hero: React.FC<{ profile: UserProfile }> = ({ profile }) => {
       <div className="container h-100">
         <div className="row align-items-center h-100 min-vh-75 py-5">
           <div className="col-lg-12 text-white text-center">
-            <p className="text-uppercase fw-semibold mb-2" style={{ letterSpacing: '1px', opacity: 0.9 }}>
-              Full-Stack Developer Portfolio
-            </p>
             <h1 className="display-3 fw-bold mb-3">
               Hi, I'm <span className="text-warning">{profile.firstName} {profile.lastName}</span>
             </h1>
