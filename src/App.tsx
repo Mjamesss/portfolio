@@ -808,7 +808,7 @@ const Contact: React.FC = () => {
                   <h6 className="mb-3">Follow Me</h6>
                   <div className="d-flex gap-2">
                     <a
-                      href="https://github.com/markjamesrafael"
+                      href="https://github.com/Mjamesss"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-dark rounded-circle d-flex align-items-center justify-content-center"
@@ -821,7 +821,7 @@ const Contact: React.FC = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://instagram.com/markjamesrafael"
+                      href="https://www.instagram.com/m_fffyyy_?igsh=MXJteDQ3cndsY2l0dA%3D%3D"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-danger rounded-circle d-flex align-items-center justify-content-center"
@@ -836,7 +836,7 @@ const Contact: React.FC = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://facebook.com/markjamesrafael"
+                      href="https://www.facebook.com/thekarinamontage"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-primary rounded-circle d-flex align-items-center justify-content-center"
