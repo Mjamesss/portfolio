@@ -110,9 +110,9 @@ const portfolioData: PortfolioData = {
     title: 'Full-Stack Developer',
     bio: 'Passionate full-stack developer with 2 years of hands-on experience building responsive and scalable web applications. Skilled in both front-end and back-end development. Graduating Computer Science student eager to contribute as a junior to senior-level developer in a professional team environment.',
     socialLinks: {
-      github: 'https://github.com/markjamesrafael',
-      instagram: 'https://instagram.com/markjamesrafael',
-      facebook: 'https://facebook.com/markjamesrafael'
+      github: 'https://github.com/Mjamesss',
+      instagram: 'https://www.instagram.com/m_fffyyy_?igsh=MXJteDQ3cndsY2l0dA%3D%3D',
+      facebook: 'https://www.facebook.com/thekarinamontage'
     },
     resumeUrl: '/CV.pdf',
     yearsOfExperience: 2
@@ -140,17 +140,18 @@ const portfolioData: PortfolioData = {
   experiences: [
     {
       id: 'exp-1',
-      company: 'Australian Outsource Inc.',
-      position: 'Data Analyst (Applying)',
-      location: 'Remote/On-site',
-      startDate: new Date('2024-03-01'),
-      current: true,
+      company: 'Intracode IT Solutions',
+      position: 'Fullstack Developer and QA Lead',
+      location: 'On-site',
+      startDate: new Date('2025-01-01'),
+      endDate: new Date('2026-01-01'),
+      current: false,
       description: [
-        'Currently applying for Data Analyst position',
-        'Aspiring to apply data analysis skills in professional environment',
-        'Preparing to contribute to data-driven decision making'
+        'Developed and maintained full-stack web applications using modern technologies',
+        'Led quality assurance efforts to ensure code quality and user satisfaction',
+        'Collaborated with team members to deliver scalable solutions'
       ],
-      technologies: ['Data Analysis', 'SQL', 'Excel', 'Python']
+      technologies: ['React.js', 'Express.js', 'Node.js', 'MongoDB', 'Git/GitHub']
     }
   ],
   educations: [
@@ -251,7 +252,7 @@ const portfolioData: PortfolioData = {
     {
       id: 'proj-3',
       title: 'RVM IoT',
-      description: 'Internet of Things project for Reverse Vending Machine system that tracks and rewards recycling activities.',
+      description: 'Internet of Things project for Reverse Vending Machhine system that tracks and rewards recycling activities.',
       shortDescription: 'IoT recycling system',
       technologies: ['IoT', 'Arduino', 'Sensors', 'Embedded Systems'],
       githubUrl: 'https://github.com/markjamesrafael/rvm-iot',
@@ -288,7 +289,10 @@ const portfolioData: PortfolioData = {
 // 3. UTILITY FUNCTIONS
 // ===============================
 
-const formatDate = (date: Date): string => {
+const formatDate = (date: Date, yearOnly: boolean = false): string => {
+  if (yearOnly) {
+    return `${date.getFullYear()}`;
+  }
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   return `${months[date.getMonth()]} ${date.getFullYear()}`;
 };
@@ -381,9 +385,6 @@ const Hero: React.FC<{ profile: UserProfile }> = ({ profile }) => {
       <div className="container h-100">
         <div className="row align-items-center h-100 min-vh-75 py-5">
           <div className="col-lg-12 text-white text-center">
-            <p className="text-uppercase fw-semibold mb-2" style={{ letterSpacing: '1px', opacity: 0.9 }}>
-              Full-Stack Developer Portfolio
-            </p>
             <h1 className="display-3 fw-bold mb-3">
               Hi, I'm <span className="text-warning">{profile.firstName} {profile.lastName}</span>
             </h1>
@@ -512,23 +513,6 @@ const About: React.FC<{ profile: UserProfile }> = ({ profile }) => {
                 </div>
               </div>
             </div>
-            <div className="card border-0 shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title text-primary mb-3">Fun Facts</h5>
-                <div className="row text-center">
-                  <div className="col-md-6">
-                    <div className="display-4 text-primary">✈️</div>
-                    <h6>2 Countries Visited</h6>
-                    <small className="text-muted">Singapore, Japan</small>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="display-4 text-primary">💻</div>
-                    <h6>5+ Projects</h6>
-                    <small className="text-muted">Completed</small>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -570,7 +554,6 @@ const Skills: React.FC<{ skills: Skill[] }> = ({ skills }) => {
                           <span className="badge bg-light text-dark p-2 me-2 mb-1 d-inline-block">
                             {skill.name}
                           </span>
-                          <small className="text-muted">{skill.yearsOfExperience} yrs</small>
                         </div>
                       ))}
                     </div>
@@ -610,7 +593,7 @@ const Education: React.FC<{ educations: Education[]; experiences: Experience[] }
                   <div className="card-body">
                     <h6 className="card-title mb-0">{edu.institution}</h6>
                     <p className="text-muted mb-1">{edu.field}</p>
-                    <small className="education-year fw-semibold">{formatDate(edu.startDate)} - {edu.current ? 'Present' : formatDate(edu.endDate!)}</small>
+                    <small className="education-year fw-semibold">{formatDate(edu.startDate, true)} - {edu.current ? 'Present' : formatDate(edu.endDate!, true)}</small>
                   </div>
                 </div>
               ))}
@@ -623,7 +606,7 @@ const Education: React.FC<{ educations: Education[]; experiences: Experience[] }
                   <div className="card-body">
                     <h6 className="card-title mb-0">{edu.institution}</h6>
                     <p className="text-muted mb-1">{edu.field}</p>
-                    <small className="education-year fw-semibold">{formatDate(edu.startDate)} - {formatDate(edu.endDate!)}</small>
+                    <small className="education-year fw-semibold">{formatDate(edu.startDate, true)} - {formatDate(edu.endDate!, true)}</small>
                   </div>
                 </div>
               ))}
@@ -635,7 +618,7 @@ const Education: React.FC<{ educations: Education[]; experiences: Experience[] }
                 <div key={edu.id} className="card border-0 shadow-sm mb-3">
                   <div className="card-body">
                     <h6 className="card-title mb-0">{edu.institution}</h6>
-                    <small className="education-year fw-semibold">{formatDate(edu.startDate)} - {formatDate(edu.endDate!)}</small>
+                    <small className="education-year fw-semibold">{formatDate(edu.startDate, true)} - {formatDate(edu.endDate!, true)}</small>
                   </div>
                 </div>
               ))}
@@ -647,7 +630,7 @@ const Education: React.FC<{ educations: Education[]; experiences: Experience[] }
                 <div key={edu.id} className="card border-0 shadow-sm mb-3">
                   <div className="card-body">
                     <h6 className="card-title mb-0">{edu.institution}</h6>
-                    <small className="education-year fw-semibold">{formatDate(edu.startDate)} - {formatDate(edu.endDate!)}</small>
+                    <small className="education-year fw-semibold">{formatDate(edu.startDate, true)} - {formatDate(edu.endDate!, true)}</small>
                   </div>
                 </div>
               ))}
@@ -665,7 +648,7 @@ const Education: React.FC<{ educations: Education[]; experiences: Experience[] }
                       <h6 className="text-primary">{exp.company}</h6>
                     </div>
                     <span className="badge bg-primary">
-                      {exp.current ? 'Applying' : formatDate(exp.startDate) + ' - ' + formatDate(exp.endDate!)}
+                      {exp.current ? 'Applying' : formatDate(exp.startDate, true) + ' - ' + formatDate(exp.endDate!, true)}
                     </span>
                   </div>
                   <ul className="list-unstyled mt-2">
